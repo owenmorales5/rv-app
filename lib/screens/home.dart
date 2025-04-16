@@ -23,7 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
         ],
         currentIndex: 0,
-        selectedItemColor: Colors.amber[800],
         onTap: (index) {},
       ),
     );

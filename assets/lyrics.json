@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "title": "Electric Moonlight",
+        "lyrics": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctus",
+            "Neon dreams begin to fall Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctus",
+            "Whispering to the midnight tune Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctusLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit risus nec sem dictum, sit amet feugiat orci tincidunt. Nam a luctus"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Galactic Whispers",
+        "lyrics": [
+            "Floating through the astral plane",
+            "Counting stars like drops of rain",
+            "The cosmos sings my name"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Velvet Thunder",
+        "lyrics": [
+            "Silk and lightning in my veins",
+            "Rolling thunder keeps me sane",
+            "The storm is my cathedral"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Neon Ghosts",
+        "lyrics": [
+            "Flickering in the subway lights",
+            "Memories of forgotten nights",
+            "They hum a broken melody"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Quantum Lullaby",
+        "lyrics": [
+            "Sing me to sleep in parallel",
+            "Where every version of me fell",
+            "Dreaming in superposition"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Chrome Heartache",
+        "lyrics": [
+            "My circuits ache with vintage pain",
+            "Love was just a faulty chain",
+            "Rebooting memories in the rain"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Solar Flare Serenade",
+        "lyrics": [
+            "Burning bright for you to see",
+            "A cosmic love catastrophe",
+            "Going supernova gracefully"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Hologram Blues",
+        "lyrics": [
+            "Pixelated tears I cry",
+            "Glitching as I say goodbye",
+            "Just a program passing by"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Titanium Dreams",
+        "lyrics": [
+            "Flying on metallic wings",
+            "The future hums and softly sings",
+            "Of all the impossible things"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Liquid Starlight",
+        "lyrics": [
+            "Pouring constellations in my cup",
+            "Drinking galaxies bottom up",
+            "The universe fills me up"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Static Symphony",
+        "lyrics": [
+            "White noise turns to sweet refrain",
+            "The chaos plays my brain",
+            "A beautiful disorder remains"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Digital Mirage",
+        "lyrics": [
+            "Searching for love in the firewall",
+            "Kisses lost in the protocol",
+            "Error 404: soul not found"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Celestial Roulette",
+        "lyrics": [
+            "Spinning planets like a game",
+            "Betting on a comet's flame",
+            "The universe calls my name"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Plastic Paradise",
+        "lyrics": [
+            "Artificial palm trees sway",
+            "In the glow of a fake sun's ray",
+            "Perfect in every synthetic way"
+        ]
+    }
+]

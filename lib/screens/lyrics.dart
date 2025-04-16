@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rv_app/services/lirycs.dart';
 
 class LyricsScreen extends StatelessWidget {
-  const LyricsScreen({super.key});
+  final String songId;
+  const LyricsScreen({super.key, required this.songId});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +25,35 @@ class LyricsScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
-          child: Text(
-            textAlign: TextAlign.justify,
-            'Suspendisse potenti. Aenean risus eros, eleifend ac lectus vel, gravida consequat quam. Vestibulum vel pulvinar turpis, eu ullamcorper ligula. Duis placerat vitae nunc eget feugiat. Phasellus pharetra lectus eget est tempor, sed varius est cursus. Fusce mattis sapien sem, eu egestas ligula varius non. Pellentesque gravida urna sed est ultricies blandit. Curabitur fermentum efficitur ligula, vulputate gravida nisi gravida in. Etiam vitae dolor suscipit, aliquet eros nec, fermentum odio. Quisque efficitur, tellus vitae aliquam sagittis, leo urna luctus erat, sit amet ultrices dolor leo id nisl. Nulla facilisi. Quisque placerat sit amet metus id tempus. Nunc ac vulputate massa. Phasellus pulvinar, risus a pharetra fringilla, orci diam maximus erat, at eleifend est ex at justo. Nulla vel orci lectus.',
-            style: TextStyle(fontSize: 24),
-          ),
-        ),
+      body: FutureBuilder<List<String>>(
+        future: getLyricsById(songId),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return CircularProgressIndicator();
+          } else if (snapshot.hasError) {
+            return Text('Error: ${snapshot.error}');
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return Text('No lyrics found.');
+          } else {
+            final lyrics = snapshot.data!;
+            return ListView.builder(
+              itemCount: lyrics.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 15.0,
+                    horizontal: 25.0,
+                  ),
+                  child: Text(
+                    lyrics[index],
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.justify,
+                  ),
+                );
+              },
+            );
+          }
+        },
       ),
     );
   }
