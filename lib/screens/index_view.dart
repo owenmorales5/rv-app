@@ -2,14 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:rv_app/screens/lyrics.dart';
 import 'package:rv_app/services/lirycs.dart';
 
-class IndexView extends StatefulWidget {
-  const IndexView({super.key});
+class IndexScreen extends StatefulWidget {
+  const IndexScreen({super.key});
 
   @override
-  State<IndexView> createState() => _IndexViewState();
+  State<IndexScreen> createState() => _IndexScreenState();
 }
 
-class _IndexViewState extends State<IndexView> {
+class _IndexScreenState extends State<IndexScreen> {
+  List<String> selectedSongsIds = [];
+  late Future<List<Map<String, dynamic>>> lyricsFuture;
+  @override
+  void initState() {
+    super.initState();
+    lyricsFuture = loadLyrics(); // Se carga una sola vez
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +74,7 @@ class _IndexViewState extends State<IndexView> {
         ),
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
-        future: loadLyrics(),
+        future: lyricsFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
@@ -83,10 +91,39 @@ class _IndexViewState extends State<IndexView> {
                 final lyric = lyrics[index];
                 return ListTile(
                   title: Text(lyric['title']),
-                  leading: const Icon(Icons.music_note),
-                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading:
+                      selectedSongsIds.contains(lyric['id'].toString())
+                          ? const Icon(Icons.check)
+                          : const Icon(Icons.music_note),
+                  trailing:
+                      selectedSongsIds.isNotEmpty
+                          ? null
+                          : const Icon(Icons.arrow_forward_ios),
+                  selected: selectedSongsIds.contains(lyric['id'].toString()),
+                  onLongPress: () {
+                    setState(() {
+                      selectedSongsIds.add(lyric['id'].toString());
+                    });
+                  },
                   onTap: () {
-                    //Navigate to another screen or perform an action
+                    if (selectedSongsIds.isNotEmpty) {
+                      final id = lyric['id'].toString();
+
+                      // Verificamos si ya existe el ID en el arreglo
+                      final exists = selectedSongsIds.any(
+                        (e) => e.toString() == id,
+                      );
+
+                      if (exists) {
+                        selectedSongsIds.removeWhere((e) => e.toString() == id);
+                      } else {
+                        selectedSongsIds.add(id);
+                      }
+
+                      setState(() {});
+                      return;
+                    }
+
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder:

@@ -8,8 +8,8 @@ Future<List<Map<String, dynamic>>> loadLyrics() async {
   return jsonData.cast<Map<String, dynamic>>();
 }
 
-Future<List<String>> getLyricsById(String id) async {
+Future<Map<String, dynamic>> getLyricsById(String id) async {
   final List<Map<String, dynamic>> lyricsList = await loadLyrics();
   final lirycs = (lyricsList.firstWhere((item) => item['id'].toString() == id));
-  return (lirycs['lyrics'] as List).cast<String>();
+  return lirycs;
 }

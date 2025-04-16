@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rv_app/config/theme.dart';
-import 'package:rv_app/screens/home.dart';
+import 'package:rv_app/screens/index_view.dart';
 
 void main() {
   runApp(const MainApp());
@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
       darkTheme: AppThemeCustom.darkTheme,
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: IndexScreen(),
     );
   }
 }

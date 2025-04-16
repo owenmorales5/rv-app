@@ -7,37 +7,37 @@ class LyricsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Presencia'),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.favorite),
-            onPressed: () {
-              // Add share functionality here
-            },
-          ),
-        ],
-      ),
-      body: FutureBuilder<List<String>>(
-        future: getLyricsById(songId),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Text('Error: ${snapshot.error}');
-          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Text('No lyrics found.');
-          } else {
-            final lyrics = snapshot.data!;
-            return ListView.builder(
-              itemCount: lyrics.length,
+    return FutureBuilder<Map<String, dynamic>>(
+      future: getLyricsById(songId),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator());
+        } else if (snapshot.hasError) {
+          return Text('Error: ${snapshot.error}');
+        } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          return Text('No lyrics found.');
+        } else {
+          final lyrics = snapshot.data!;
+          return Scaffold(
+            appBar: AppBar(
+              title: Text(lyrics['title']),
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(Icons.arrow_back),
+              ),
+              actions: [
+                IconButton(
+                  icon: Icon(Icons.favorite),
+                  onPressed: () {
+                    // Add share functionality here
+                  },
+                ),
+              ],
+            ),
+            body: ListView.builder(
+              itemCount: lyrics['lyrics'].length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(
@@ -45,16 +45,16 @@ class LyricsScreen extends StatelessWidget {
                     horizontal: 25.0,
                   ),
                   child: Text(
-                    lyrics[index],
+                    lyrics['lyrics'][index],
                     style: TextStyle(fontSize: 18),
                     textAlign: TextAlign.justify,
                   ),
                 );
               },
-            );
-          }
-        },
-      ),
+            ),
+          );
+        }
+      },
     );
   }
 }
