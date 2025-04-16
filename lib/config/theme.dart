@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class AppThemeCustom {
@@ -32,7 +33,7 @@ class AppThemeCustom {
       inversePrimary: Color(0xFFD0BCFF),
       surfaceTint: Color(0xFF6750A4),
     ),
-    // fontFamily: GoogleFonts.merriweather().fontFamily,
+    fontFamily: GoogleFonts.poppins().fontFamily,
 
     // AppBar
     appBarTheme: const AppBarTheme(
@@ -77,10 +78,10 @@ class AppThemeCustom {
     ),
 
     // Texto
-    // textTheme: GoogleFonts.merriweatherTextTheme().copyWith(
-    //   titleLarge: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-    //   bodyMedium: const TextStyle(fontSize: 16),
-    // ),
+    textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+      titleLarge: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+      bodyMedium: const TextStyle(fontSize: 16),
+    ),
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
@@ -103,11 +104,8 @@ class AppThemeCustom {
       onError: Color(0xFF601410),
       errorContainer: Color(0xFF8C1D18),
       onErrorContainer: Color(0xFFF9DEDC),
-      background: Color(0xFF1C1B1F),
-      onBackground: Color(0xFFE6E1E5),
       surface: Color(0xFF1C1B1F),
       onSurface: Color(0xFFE6E1E5),
-      surfaceVariant: Color(0xFF49454F),
       onSurfaceVariant: Color(0xFFCAC4D0),
       outline: Color(0xFF938F99),
       shadow: Color(0xFF000000),
@@ -116,7 +114,7 @@ class AppThemeCustom {
       inversePrimary: Color(0xFF6750A4),
       surfaceTint: Color(0xFFD0BCFF),
     ),
-    // fontFamily: GoogleFonts.merriweather().fontFamily,
+    fontFamily: GoogleFonts.poppins().fontFamily,
 
     // AppBar
     appBarTheme: const AppBarTheme(
@@ -161,11 +159,11 @@ class AppThemeCustom {
     ),
 
     // Tipografía
-    // textTheme: GoogleFonts.merriweatherTextTheme(
-    //   ThemeData.dark().textTheme,
-    // ).copyWith(
-    //   titleLarge: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-    //   bodyMedium: const TextStyle(fontSize: 16),
-    // ),
+    textTheme: GoogleFonts.poppinsTextTheme(
+      ThemeData.dark().textTheme,
+    ).copyWith(
+      titleLarge: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+      bodyMedium: const TextStyle(fontSize: 16),
+    ),
   );
 }
